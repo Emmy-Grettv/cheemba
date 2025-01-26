@@ -15,7 +15,7 @@ export default function SplashSreen() {
         <Text style={styles.desc}>Mobile waste management app</Text>
       </View>
       <View style={styles.logocontainer}>
-        <Image source={require('../assets/images/logo.png')} />
+        <Image source={require('../assets/images/logo.png')} style={{position:'relative', left: -11}}/>
         <Text style={styles.cheemba}>CHEEMBA</Text>
       </View>
     </ImageBackground>
@@ -30,25 +30,31 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#6FCF97',
-    gap: 135,
-    padding: 20,
+    gap: 60,
+    position: 'relative',
+    right: 20,
+    top: 50,
+    
   },
   container: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    position:'relative',
+    left: 20,
   },
   logocontainer: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'flex-start',
-    paddingLeft: 65,
+    alignItems: 'center',
+    position: 'relative',
+    left: 15,
+    top: 30,
   },
 
   cheemba: {
     textAlign: 'center',
-    fontSize: 50,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#E2E7F6',
   },
