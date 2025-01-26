@@ -8,6 +8,7 @@ import { Confirm } from '@/pages/Confirm';
 import { EnterInfo } from '@/pages/EnterInfo';
 import { Signin } from '@/pages/Signin';
 import { Home } from '@/pages/Home';
+import { ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationProp, StackScreenProps } from '@react-navigation/stack';
 
@@ -20,7 +21,9 @@ const Stack = createStackNavigator();
 
 export default function App({ phone }: ConfirmPhoneProps) {
   return (
-    <NavigationContainer>
+    
+    // <NavigationContainer>
+    <ScrollView style={styles.container}>
       <Stack.Navigator initialRouteName='Splash'>
         <Stack.Screen 
           name="Splash" 
@@ -63,7 +66,8 @@ export default function App({ phone }: ConfirmPhoneProps) {
           options={{ headerShown: false }} 
         />
       </Stack.Navigator>
-    </NavigationContainer>
+    </ScrollView>
+    // </NavigationContainer>
   );
 }
 
