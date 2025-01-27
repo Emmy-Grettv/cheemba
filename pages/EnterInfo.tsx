@@ -39,7 +39,7 @@ export const EnterInfo: React.FC<confirmPhone> = ({ phone }) => {
                 <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/ig.png')} /></View>
             </View>
             <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ color: '#FFFFFF', fontSize: 12 }}>Already have an account, <Text style={{ fontWeight: 600, cursor: 'pointer', textDecorationLine: 'underline' }}>Login</Text> </Text>
+                <Text style={{ color: '#FFFFFF', fontSize: 12 }}>Already have an account, <Text style={{ fontWeight: 600, cursor: 'pointer', textDecorationLine: 'underline' }} onPress={handleSignin}>Login</Text> </Text>
                 <Text style={{ color: '#FFFFFF', fontSize: 12 }}>Forgot <Text style={{ fontWeight: 600, cursor: 'pointer', textDecorationLine: 'underline' }}>Password?</Text> </Text>
             </View>
         </View>

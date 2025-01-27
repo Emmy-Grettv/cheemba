@@ -1,12 +1,16 @@
 import React, { useState } from "react"
-import { StyleSheet, View, ScrollView, Text } from "react-native"
+import { StyleSheet, View, ScrollView, Text, Image } from "react-native"
 import TabBar from "@/components/TabBar"
 
 export const Status=()=>{
     return (
         <View style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingTop: 10, paddingHorizontal: 10, backgroundColor: '#6FCF97', flex: 1, }}>
             <ScrollView contentContainerStyle={styles.homeContainer}>
-             <Text>Status</Text>
+             <View>
+                <View>
+                    <Image source={require('../assets/images/logo.png')} style={{width: 24,height: 24}}/>
+                </View>
+             </View>
             </ScrollView>
             <View style={{ position: 'absolute', bottom: 0 }}>
                 <TabBar />
