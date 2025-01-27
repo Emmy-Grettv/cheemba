@@ -41,11 +41,11 @@ export const Home = () => {
             <ScrollView contentContainerStyle={styles.homeContainer}>
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: 275 }}>
                     <TouchableOpacity onPress={() => setIsSidebarVisible(!isSidebarVisible)} style={{ width: 35, height: 35, borderRadius: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/menu.png')} /></TouchableOpacity>
-                    <View style={{ width: 35, height: 35, borderRadius: 50, justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/profile.png')} /></View>
+                    <View style={{ width: 35, height: 35, borderRadius: 50, justifyContent: 'center', alignItems: 'center' }}><TouchableOpacity onPress={handleProfile}><Image source={require('../assets/icons/profile.png')} /></TouchableOpacity></View>
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: 275 }}>
                     <Text style={{ color: '#233B45', fontWeight: 700, fontSize: 14 }}>Hey Jacob👋</Text>
-                    <View style={{ width: 20, height: 20, borderRadius: 50, justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/attention.png')} /></View>
+                    <View style={{ width: 20, height: 20, borderRadius: 50, justifyContent: 'center', alignItems: 'center' }}> <TouchableOpacity onPress={handleStatus}><Image source={require('../assets/icons/attention.png')} /></TouchableOpacity> </View>
                 </View>
                 <Text style={{ color: '#233B45', fontSize: 12, textAlign: 'left' }}>Let’s see your contribution to the society</Text>
                 <View style={styles.stati}>
