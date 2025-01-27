@@ -8,6 +8,9 @@ import { Confirm } from '@/pages/Confirm';
 import { EnterInfo } from '@/pages/EnterInfo';
 import { Signin } from '@/pages/Signin';
 import { Home } from '@/pages/Home';
+import { Profile } from '@/pages/Profile';
+import { Status } from '@/pages/Status';
+import { Statistics } from '@/pages/Statistics';
 import { ScrollView, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationProp, StackScreenProps } from '@react-navigation/stack';
@@ -61,6 +64,21 @@ export default function App({ phone }: ConfirmPhoneProps) {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Statistics"
+          component={Statistics}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Status"
+          component={Status}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
           options={{ headerShown: false }}
         />
     </Stack.Navigator>

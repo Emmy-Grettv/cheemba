@@ -2,8 +2,27 @@ import React, { useState } from "react"
 import { StyleSheet, View, ScrollView, Text, Image, TouchableOpacity, Animated } from "react-native"
 import WhatToDoCard from "@/components/whatToDoCard"
 import TabBar from "@/components/TabBar"
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 
 export const Home = () => {
+
+    const navigation = useNavigation<StackNavigationProp<any>>();
+        const handleHome = () => {
+            navigation.navigate('Home');
+        };
+        const handleProfile =()=>{
+            navigation.navigate('Profile');
+        };
+        const handleStatistics=()=>{
+            navigation.navigate('Statistics')
+        }
+        const handleStatus=()=>{
+            navigation.navigate('Status')
+        }
+        const handleLogout=()=>{
+            navigation.navigate('signin')
+        }
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
     return (
@@ -11,12 +30,12 @@ export const Home = () => {
             {isSidebarVisible && (
                 <Animated.View style={styles.sidebar}>
                     <TouchableOpacity onPress={() => setIsSidebarVisible(!isSidebarVisible)} style={{ width: 35, height: 35, borderRadius: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }}> <Text style={{color:'#ffffff', fontSize: 20, fontWeight:'bold', textAlign:'right', width:300}}>X</Text> </TouchableOpacity>
-                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/home.png')}/><Text style={styles.sidebarText}>Home</Text></TouchableOpacity>
-                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/statistic.png')}/><Text style={styles.sidebarText}>Statistics</Text></TouchableOpacity>
-                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/status.png')}/><Text style={styles.sidebarText}>Status</Text></TouchableOpacity>
-                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/settings.png')}/><Text style={styles.sidebarText}>Settings</Text></TouchableOpacity>
-                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/profile.png')}/><Text style={styles.sidebarText}>Profile</Text></TouchableOpacity>
-                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/logout.png')}/><Text style={styles.sidebarText}>Logout</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={handleHome} style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/home.png')}/><Text style={styles.sidebarText}>Home</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={handleStatistics} style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/statistic.png')}/><Text style={styles.sidebarText}>Statistics</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={handleStatus} style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/status.png')}/><Text style={styles.sidebarText}>Status</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={handleProfile} style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/settings.png')}/><Text style={styles.sidebarText}>Settings</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={handleProfile} style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/profile.png')}/><Text style={styles.sidebarText}>Profile</Text></TouchableOpacity>
+                    <TouchableOpacity onPress={handleLogout} style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/logout.png')}/><Text style={styles.sidebarText}>Logout</Text></TouchableOpacity>
                 </Animated.View>
             )}
             <ScrollView contentContainerStyle={styles.homeContainer}>
