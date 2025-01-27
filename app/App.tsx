@@ -12,7 +12,7 @@ import { Profile } from '@/pages/Profile';
 import { Status } from '@/pages/Status';
 import { Statistics } from '@/pages/Statistics';
 import { ScrollView, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { Notifications } from '@/pages/Notifications';
 import { createStackNavigator, StackNavigationProp, StackScreenProps } from '@react-navigation/stack';
 
 interface ConfirmPhoneProps {
@@ -79,6 +79,11 @@ export default function App({ phone }: ConfirmPhoneProps) {
         <Stack.Screen
           name="Profile"
           component={Profile}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Noti"
+          component={Notifications}
           options={{ headerShown: false }}
         />
     </Stack.Navigator>
