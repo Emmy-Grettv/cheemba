@@ -1,13 +1,27 @@
-import { StyleSheet, View, ScrollView, Text, Image } from "react-native"
+import React, { useState } from "react"
+import { StyleSheet, View, ScrollView, Text, Image, TouchableOpacity, Animated } from "react-native"
 import WhatToDoCard from "@/components/whatToDoCard"
 import TabBar from "@/components/TabBar"
 
 export const Home = () => {
+    const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+
     return (
-        <View style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingTop: 10, paddingHorizontal: 10, backgroundColor: '#6FCF97', flex:1,}}>
+        <View style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingTop: 10, paddingHorizontal: 10, backgroundColor: '#6FCF97', flex: 1, }}>
+            {isSidebarVisible && (
+                <Animated.View style={styles.sidebar}>
+                    <TouchableOpacity onPress={() => setIsSidebarVisible(!isSidebarVisible)} style={{ width: 35, height: 35, borderRadius: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }}> <Text style={{color:'#ffffff', fontSize: 20, fontWeight:'bold', textAlign:'right', width:300}}>X</Text> </TouchableOpacity>
+                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/home.png')}/><Text style={styles.sidebarText}>Home</Text></TouchableOpacity>
+                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/statistic.png')}/><Text style={styles.sidebarText}>Statistics</Text></TouchableOpacity>
+                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/status.png')}/><Text style={styles.sidebarText}>Status</Text></TouchableOpacity>
+                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/settings.png')}/><Text style={styles.sidebarText}>Settings</Text></TouchableOpacity>
+                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/profile.png')}/><Text style={styles.sidebarText}>Profile</Text></TouchableOpacity>
+                    <TouchableOpacity style={{display:'flex', flexDirection:'row', justifyContent:'flex-start', alignItems:'center', padding: 5, gap:10, backgroundColor:'#334F66FF', borderRadius: 10, cursor:'pointer'}}><Image source={require('../assets/home/logout.png')}/><Text style={styles.sidebarText}>Logout</Text></TouchableOpacity>
+                </Animated.View>
+            )}
             <ScrollView contentContainerStyle={styles.homeContainer}>
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: 275 }}>
-                    <View style={{ width: 35, height: 35, borderRadius: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/menu.png')} /></View>
+                    <TouchableOpacity onPress={() => setIsSidebarVisible(!isSidebarVisible)} style={{ width: 35, height: 35, borderRadius: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/menu.png')} /></TouchableOpacity>
                     <View style={{ width: 35, height: 35, borderRadius: 50, justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/profile.png')} /></View>
                 </View>
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: 275 }}>
@@ -58,6 +72,22 @@ export const Home = () => {
 }
 
 const styles = StyleSheet.create({
+    sidebar: {
+        position: "absolute",
+        left: 0,
+        top: 0,
+        bottom: 0,
+        width: 200,
+        backgroundColor: "#233B45",
+        padding: 20,
+        zIndex: 1,
+        gap: 10
+    },
+    sidebarText: {
+        color: "#fff",
+        fontSize: 16,
+        marginVertical: 10,
+    },
     homeContainer: {
         backgroundColor: '#ffffff',
         width: 320,
