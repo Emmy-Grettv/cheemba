@@ -1,12 +1,19 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput } from 'react-native';
+import { Text, View, StyleSheet, TextInput, Image } from 'react-native';
 import { Button } from '@/components/Button';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
+
 
 interface ConfirmPhoneProps {
     phone: number;
 }
 
 export const Confirm: React.FC<ConfirmPhoneProps> = ({ phone }) => {
+    const navigation = useNavigation<StackNavigationProp<any>>();
+    const handleEnterInfo = () => {
+        navigation.navigate('EnterInfo', { phone: Number(phone) });
+    };
     return (
         <View style={styles.welcome}>
             <View style={styles.container}>
@@ -22,12 +29,12 @@ export const Confirm: React.FC<ConfirmPhoneProps> = ({ phone }) => {
                     </View>
                     <TextInput style={styles.input} placeholder='4 Digit Confirmation Pin' />
                 </View>
-                <Button title='Confirm' />
+                <Button title='Confirm' onPress={handleEnterInfo} />
             </View>
             <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 20 }}>
-                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40 }}></View>
-                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40 }}></View>
-                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40 }}></View>
+                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/twitter.png')} /></View>
+                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/google.png')} /></View>
+                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/ig.png')} /></View>
             </View>
             <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={{ color: '#FFFFFF', fontSize: 12 }}>Already have an account, <Text style={{ fontWeight: '600', cursor: 'pointer', textDecorationLine: 'underline' }}>Login</Text> </Text>

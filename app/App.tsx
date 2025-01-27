@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import SplashScreen from '@/pages/SplashScreen';
 import { StyleSheet } from 'react-native';
 import OnBoarding from '@/pages/OnBoarding';
-import { Qrcode } from '@/pages/qrcode';
+import Qrcode from '@/pages/qrcode';
 import { Welcome } from '@/pages/Welcome';
 import { Confirm } from '@/pages/Confirm';
 import { EnterInfo } from '@/pages/EnterInfo';
 import { Signin } from '@/pages/Signin';
 import { Home } from '@/pages/Home';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, StackNavigationProp, StackScreenProps } from '@react-navigation/stack';
 
@@ -21,53 +21,51 @@ const Stack = createStackNavigator();
 
 export default function App({ phone }: ConfirmPhoneProps) {
   return (
-    
-    // <NavigationContainer>
-    <ScrollView style={styles.container}>
-      <Stack.Navigator initialRouteName='Splash'>
-        <Stack.Screen 
-          name="Splash" 
-          component={SplashScreenWrapper} 
-          options={{ headerShown: false }} 
+    <ScrollView contentContainerStyle={styles.container}>
+    <Stack.Navigator initialRouteName='Splash'>
+        <Stack.Screen
+          name="Splash"
+          component={SplashScreenWrapper}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen 
-          name="OnBoarding" 
-          component={OnBoarding} 
-          options={{ headerShown: false }} 
+        <Stack.Screen
+          name="OnBoarding"
+          component={OnBoarding}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen 
-          name="Welcome" 
-          component={Welcome} 
-          options={{ headerShown: false }} 
+        <Stack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen 
-          name="Qrcode" 
-          component={Qrcode} 
-          options={{ headerShown: false }} 
+        <Stack.Screen
+          name="Qrcode"
+          component={Qrcode}
+          options={{ headerShown: false }}
         />
-        <Stack.Screen 
-          name="Confirm" 
+        <Stack.Screen
+          name="Confirm"
           component={(props: StackScreenProps<any>) => <Confirm {...props} phone={phone} />}
-          options={{ headerShown: false }} 
+          options={{ headerShown: false }}
         />
-        <Stack.Screen 
-          name="EnterInfo" 
+        <Stack.Screen
+          name="EnterInfo"
           component={(props: StackScreenProps<any>) => <EnterInfo {...props} phone={phone} />}
-          options={{ headerShown: false }} 
+          options={{ headerShown: false }}
         />
-        <Stack.Screen 
-          name="Signin" 
+        <Stack.Screen
+          name="Signin"
           component={(props: StackScreenProps<any>) => <Signin {...props} phone={phone} />}
-          options={{ headerShown: false }} 
+          options={{ headerShown: false }}
         />
-        <Stack.Screen 
-          name="Home" 
-          component={Home} 
-          options={{ headerShown: false }} 
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
         />
-      </Stack.Navigator>
+    </Stack.Navigator>
     </ScrollView>
-    // </NavigationContainer>
+
   );
 }
 
@@ -94,4 +92,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     backgroundColor: '#6FCF97',
   },
+  // scrollview:{
+  //   flex: 1,
+  // }
 });

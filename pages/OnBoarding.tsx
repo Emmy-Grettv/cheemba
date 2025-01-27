@@ -10,7 +10,7 @@ export default function OnBoarding() {
   const navigation = useNavigation<StackNavigationProp<any>>();
 
   const handlePress = () => {
-    navigation.navigate('Qrcode');
+    navigation.navigate('Welcome');
   };
   return (
     <ImageBackground
@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     position:'relative',
     top: 130,
     left: 90,
+    cursor:'pointer',
   },
   buttonContainer: {
     position: 'absolute',

@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     right: 20,
     top: 50,
-    
+    // backgroundColor: '#6FCF97',
   },
   container: {
     display: 'flex',

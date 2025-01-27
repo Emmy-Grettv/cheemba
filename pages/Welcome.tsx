@@ -6,10 +6,10 @@ import { useNavigation } from '@react-navigation/native';
 
 export const Welcome = () => {
     const navigation = useNavigation<StackNavigationProp<any>>();
-    const [phone, setPhone] = useState(''); 
+    const [phone, setPhone] = useState('');
 
     const handleConfirm = () => {
-        navigation.navigate('Confirm', { phone: Number(phone) }); 
+        navigation.navigate('Confirm', { phone: Number(phone) });
     };
 
     return (
@@ -23,23 +23,23 @@ export const Welcome = () => {
                 <Text style={styles.code}>ch078934</Text>
             </View>
             <View style={styles.welcomeCont}>
-                <View style={{ display: 'flex', gap: 10 }}> 
+                <View style={{ display: 'flex', gap: 10 }}>
                     <Text style={{ color: '#404040', fontWeight: '600', fontSize: 24 }}>Welcome👋</Text>
                     <Text style={{ color: '#404040', fontWeight: '400', fontSize: 12 }}>Hello there, enter phone number to continue!</Text>
-                    <TextInput 
-                        style={styles.input} 
-                        placeholder="Enter your phone number" 
-                        value={phone} 
-                        onChangeText={setPhone} 
-                        keyboardType="phone-pad" 
+                    <TextInput
+                        style={styles.input}
+                        placeholder="Enter your phone number"
+                        value={phone}
+                        onChangeText={setPhone}
+                        keyboardType="phone-pad"
                     />
                 </View>
                 <Button title='Continue' onPress={handleConfirm} />
             </View>
             <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 20 }}>
-                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40 }}></View>
-                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40 }}></View>
-                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40 }}></View>
+                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40, display: 'flex', justifyContent: 'center', alignItems: 'center' }}> <Image source={require('../assets/icons/twitter.png')} /> </View>
+                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/google.png')} /></View>
+                <View style={{ width: 80, height: 43, borderColor: '#FFFFFF', borderWidth: 2, borderRadius: 40, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/ig.png')} /></View>
             </View>
             <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Text style={{ color: '#FFFFFF', fontSize: 12 }}>Already have an account, <Text style={{ fontWeight: '600', cursor: 'pointer', textDecorationLine: 'underline' }}>Login</Text> </Text>
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
         width: 250,
         backgroundColor: '#CFCFCF36',
         borderRadius: 50,
-        display:'flex',
+        display: 'flex',
         paddingHorizontal: 25,
     }
 })

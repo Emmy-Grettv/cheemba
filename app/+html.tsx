@@ -11,17 +11,17 @@ export default function Root({ children }: PropsWithChildren) {
         <ScrollViewStyleReset />
         <style dangerouslySetInnerHTML={{ __html: responsiveBackground }} />
       </head>
-      <body>{children}</body>
+      <body style={{backgroundColor:'#6FCF97'}}>{children}</body>
     </html>
   );
 }
 
 const responsiveBackground = `
 body {
-  background-color: #fff;
+  background-color: #6FCF97;
 }
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #f0f0f5;
+    background-color: #6FCF97;
   }
 }`;
