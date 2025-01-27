@@ -5,7 +5,8 @@ const { height, width } = Dimensions.get('window');
 
 export default function SplashSreen() {
   return (
-    <ImageBackground
+    <View style={{display:'flex', flex:1, backgroundColor:'#6FCF97'}}>
+      <ImageBackground
       source={require('../assets/images/splash-bg.png')}
       style={styles.background}
       resizeMode="cover"
@@ -19,6 +20,7 @@ export default function SplashSreen() {
         <Text style={styles.cheemba}>CHEEMBA</Text>
       </View>
     </ImageBackground>
+    </View>
   );
 }
 

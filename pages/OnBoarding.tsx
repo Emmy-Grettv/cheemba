@@ -13,6 +13,7 @@ export default function OnBoarding() {
     navigation.navigate('Welcome');
   };
   return (
+    <View style={{display:'flex', flex:1, backgroundColor:'#6FCF97'}}>
     <ImageBackground
       source={require('../assets/images/splash-bg.png')}
       style={styles.background}
@@ -30,6 +31,7 @@ export default function OnBoarding() {
         <Image source={require('@/assets/images/arrow.png')} />
       </TouchableOpacity>
     </ImageBackground>
+    </View>
   );
 }
 

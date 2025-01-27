@@ -28,7 +28,7 @@ const Qrcode: React.FC<QrcodeProps> = ({ navigation }) => {
   };
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor:'#6FCF97' }}>
       <RNCamera
         style={{ flex: 1 }}
         onBarCodeRead={handleBarCodeRead}

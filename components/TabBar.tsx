@@ -12,14 +12,12 @@ export default function TabBar(){
 
 const styles=StyleSheet.create({
     container:{
-        position: 'sticky',
-        bottom: 215,
         display:'flex',
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
         width: 360,
         padding: 20,
-        backgroundColor:'#253334'
+        backgroundColor:'#253334',
     }
 })

@@ -92,7 +92,5 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     backgroundColor: '#6FCF97',
   },
-  // scrollview:{
-  //   flex: 1,
-  // }
+
 });

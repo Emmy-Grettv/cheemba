@@ -4,7 +4,7 @@ import TabBar from "@/components/TabBar"
 
 export const Home = () => {
     return (
-        <ScrollView contentContainerStyle={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingTop: 10, paddingHorizontal: 10,  backgroundColor: '#6FCF97', }}>
+        <View style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingTop: 10, paddingHorizontal: 10, backgroundColor: '#6FCF97', flex:1,}}>
             <ScrollView contentContainerStyle={styles.homeContainer}>
                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: 275 }}>
                     <View style={{ width: 35, height: 35, borderRadius: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }}><Image source={require('../assets/icons/menu.png')} /></View>
@@ -50,8 +50,10 @@ export const Home = () => {
                     </View>
                 </View>
             </ScrollView>
-            <TabBar />
-        </ScrollView>
+            <View style={{ position: 'absolute', bottom: 0 }}>
+                <TabBar />
+            </View>
+        </View>
     )
 }
 
@@ -67,6 +69,7 @@ const styles = StyleSheet.create({
         borderColor: '#F5F5F55C',
         padding: 10,
         gap: 20,
+        paddingBottom: 80,
     },
     stati: {
         width: 294,
