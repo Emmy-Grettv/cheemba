@@ -21,7 +21,7 @@ export const Home = () => {
             navigation.navigate('Status')
         }
         const handleLogout=()=>{
-            navigation.navigate('signin')
+            navigation.navigate('Signin')
         }
     const [isSidebarVisible, setIsSidebarVisible] = useState(false);
 
